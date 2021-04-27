@@ -527,7 +527,8 @@ editor.replace(replace);
 }
 function find1(){
 var find = document.getElementById("search").value;
-editor.find(find);	
+if(editor.find(find)){}
+else{alert('no such keyword in your file  as : ' + find);}
 }	
 function launchpreference(){
 document.getElementById('frame3').style.display="block";
