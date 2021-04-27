@@ -372,8 +372,8 @@ onclick="launchsearch()"></i><br>
   <div id="searchbox">
   <input id="search" placeholder="search"/>
  <i class="fas fa-search" style="padding-top:4px;color:rgb(67, 193, 243);margin-left:20px;" onclick="find1()"></i>
-  <i class="fas fa-chevron-up" style="margin-left:20px;color:rgb(67, 193, 243);"></i>
-  <i class="fas fa-chevron-down" style="margin-left:20px;color:rgb(67, 193, 243);"></i>
+  <i class="fas fa-chevron-up" style="margin-left:20px;color:rgb(67, 193, 243);" onclick="findprevious()"></i>
+  <i class="fas fa-chevron-down" style="margin-left:20px;color:rgb(67, 193, 243);" onclick="findnext()"></i>
   <br><br>
   <input id="replace" placeholder="replace"/>
   <i class="fas fa-sync" style="margin-left:20px;color:rgb(67, 193, 243);" onclick="seiko()"></i>
@@ -535,7 +535,7 @@ editor.replaceAll('find');
 function findnext(){
 editor.findNext(find);	
 }
-function findprevious{
+function findprevious(){
 editor.findPrevious(find);	
 }	
 function launchpreference(){
