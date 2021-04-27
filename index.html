@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Firescrypt studio</title>
+
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+	 crossorigin="anonymous">
+	<link rel="icon" href="Screenshot from 2021-04-12 20-51-16.png" sizes="16x16">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload{
+   
+    display: inline-block;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+   background-color: rgb(68, 67, 67);
+  color: rgb(67, 243, 190);
+ font-family: 'Josefin Sans', sans-serif;
+font-size: 16px;
+}
+#search{
+  padding-top:40px;
+  padding-left:20px;
+margin-left:3px;
+padding:11px 10px;
+ background-color: rgb(68, 67, 67);
+  color: rgb(67, 193, 243);
+ font-family: 'Josefin Sans', sans-serif;
+font-size: 16px;
+}
+.font-size{
+    padding-top:40px;
+  padding-left:20px;
+margin-left:35px;
+padding:11px 10px;
+ background-color: rgb(68, 67, 67);
+  color: rgb(67, 193, 243);
+ font-family: 'Josefin Sans', sans-serif;
+font-size: 16px;
+margin-top:30px;
+}
+#replace{
+  padding-top:40px;
+  padding-left:20px;
+margin-left:3px;
+padding:11px 10px;
+ background-color: rgb(68, 67, 67);
+  color: rgb(67, 193, 243);
+ font-family: 'Josefin Sans', sans-serif;
+font-size: 16px;
+}
+#searchbox{
+  padding-top: 20px;
+  padding-left: 30px;
+  display: none;
+}
+
+.custom-file-upload:hover{
+    
+    display: inline-block;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+background-color: rgb(67, 243, 190);
+ color:rgb(68, 67, 67);
+ font-family: 'Josefin Sans', sans-serif;
+font-size: 16px;
+}
+
+header {
+  height: 90px;
+  background-color: #1E1E1E;
+  display: flex;
+ 
+  
+}
+
+#logocontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+  }
+  
+#buttoncontainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-right: 30px;
+}
+
+#dashboard {
+  padding: 14px 28px;
+  border-radius: 5px;
+   background-color: rgb(68, 67, 67);
+  color: rgb(67, 243, 190);
+  cursor: pointer;
+ font-family: 'Josefin Sans', sans-serif;
+font-size: 16px;
+}
+
+#dashboard:hover{
+ padding: 14px 28px;
+ background-color: rgb(67, 243, 190);
+ color:rgb(68, 67, 67);
+ cursor: pointer;
+ border-radius: 5px;
+ font-family: 'Josefin Sans', sans-serif;
+ font-size: 16px;
+}
+
+
+#fileadd {
+ padding: 14px 28px;
+  border-radius: 5px;
+   background-color: rgb(68, 67, 67);
+  color: rgb(67, 243, 190);
+  cursor: pointer;
+ font-family: 'Josefin Sans', sans-serif;
+ font-size: 16px;
+}
+
+#fileadd:hover{
+padding: 14px 28px;
+  background-color: rgb(67, 243, 190);
+ color:rgb(68, 67, 67);
+ cursor: pointer;
+ border-radius: 5px;
+ font-family: 'Josefin Sans', sans-serif;
+ font-size: 16px;
+}
+
+.iconify{
+    font-size: 40px; 
+  }
+
+  
+ main {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+#frame1{
+width:80px;
+text-align: center;
+align-items: center;
+justify-content: center;
+background-color: rgb(31, 31, 31);
+
+} 
+#frame2{
+width:300px;
+background-color:rgb(61, 61, 61);
+display: none;
+}
+#frame3{
+width:300px;
+background-color:rgb(61, 61, 61);
+display: none;
+}
+#editor {
+    flex:1;
+  }
+#consolediv{
+ width:300px;
+background-color:rgb(61, 61, 61);
+display: none;
+}
+#files{
+padding-top: 10px;
+width: 15%;
+background-color: rgb(255, 255, 255);
+text-align: center;
+font-family: 'Josefin Sans', sans-serif;
+font-size: 28 px; 
+
+}
+p{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+input, button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+#nav{
+color: rgb(122, 122, 122);
+padding-top:20px;
+}
+#nav:hover{
+ color: rgb(26, 172, 240); 
+}
+#close-icon{
+  justify-content: right;
+  padding-top:10px;
+  padding-right:10px; 
+  float: right;
+  color: rgb(26, 172, 240); 
+}
+#close-icon:hover{
+color: rgb(122, 122, 122);  
+}
+#save{
+ color: rgb(122, 122, 122);
+padding-top:20px; 
+}
+#save:hover{
+ color: rgb(26, 172, 240); 
+}
+.button-primary-blue{
+    margin-top:40px;
+    padding: 15px 55px;
+    background-color: #4285f4;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+    border-color:#4285f4 ;
+   padding-bottom: 10px;
+    padding-top:10px ;
+}
+.button-primary-blue:hover{
+    box-shadow: 0 0 6px #4285f4;
+    padding-top:10px ;
+}
+.button-primary-blue:active{
+background: rgb(8, 37, 204);
+padding-top:10px ;
+}
+#blocks{
+flex:1;
+display: none;
+}
+#blocklyheader{
+width: 100%;
+height: 40px ;
+}
+#blocklyimg{
+width:100px;
+height: auto;
+padding-left: 40px;
+padding-top:20px;
+}
+#blocklyback{
+  float: right;
+  padding-top:20px;
+  padding-right:10px;
+}
+#blocklyback:hover{
+ color: rgb(26, 172, 240);  
+}
+.run-button{
+  padding-top: 30px;
+  padding-left: 88px;
+}
+.error-code{
+  padding-top: 2px;
+  padding-left: 20px;
+  color: white;
+}
+.error-code a{
+  color: rgb(26, 172, 240);  
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+
+
+	<header>
+
+
+
+		<div id="logocontainer">
+			<img src="octocat.png" width="40%" height="auto";></img>
+		</div>
+
+
+		<div id="buttoncontainer">
+
+         
+
+<button id="search-up-button" onclick="upsearch()" hidden></button>
+<button id="search-down-button" onclick="downsearch()" hidden></button>
+
+        </div>  
+          
+
+
+
+      </header>
+      <main>
+<div id="frame1">
+<i class="fas fa-sliders-h fa-2x"id="nav" onclick="launchpreference()"></i><br>
+<i class="fas fa-spider fa-2x" id="nav" onclick="launchconsole()"></i><br>
+<i class="fab fa-searchengin fa-2x" id="nav"
+onclick="launchsearch()"></i><br>
+<label for="file-upload">
+<i class="fas fa-upload fa-2x" id="nav"></i>
+</label>
+<input type="file" onchange="readFile(this)"/><br>
+<i class="fas fa-file-download fa-2x" id="save"></i><br>
+<i class="fas fa-shapes fa-2x" onclick="blocks()" id="nav"></i>
+</div> 
+<div id="frame2">
+  <div style="width:300px;height:20px">
+    <i class="fas fa-times" id="close-icon" onclick="closeframe2()"></i>
+  </div> 
+  <div id="searchbox">
+  <input id="search" placeholder="search"/><br><br>
+  <input id="replace" placeholder="replace"/><br><br><br>
+  <a class="button-primary-blue" onclick="seiko()"><b>Find and replace</b></a>
+  </div>
+  <div id="preferencebox">
+
+  </div>
+</div> 
+<div id="consolediv">
+  <div style="width:300px;height:20px">
+    <i class="fas fa-times" id="close-icon" onclick="closeconsole()"></i>
+  </div> 
+  <div class="run-button">
+ <a class="button-primary-blue" onclick="buttonclick68()"><b>Run</b></a></div>
+ <div class="error-code">
+ <br><p>This file will be run as a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">blob</a> file ie: it will not exist if the editor is closed</p>
+ </div>
+  
+</div>    
+<div id="frame3">
+  <div style="width:300px;height:20px">
+    <i class="fas fa-times" id="close-icon" onclick="closeframe3()"></i>
+  </div> 
+ 
+
+<div class="dropdown">
+  <button class="button-primary-blue" style="margin-left:40px;"><b>Editor theme</b></button>
+  <div class="dropdown-content" style="margin-left:50px;">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  </div>
+</div>
+
+<input class="font-size" placeholder="editor font-size" id="setfont"/>
+
+</div>     
+
+     
+<div id="editor" ><!--Sample file--></div>
+
+<div id="blocks">
+<div id="blocklyheader">
+<img id="blocklyimg" src="https://developers.google.com/blockly/images/logos/logo_built_on.png"/>
+<i class="fas fa-chevron-left" style="padding-right:10px;" onclick="blocklyclose()" id="blocklyback"></i><br>
+
+<iframe width="93%" style="position: absolute; height: 90%; border: none;"
+src="blocks.html"></iframe>
+</div>
+
+</div>
+  
+        
+      
+      </main>
+      
+      <script
+        src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"
+        type="text/javascript"
+        charset="utf-8"
+      ></script>
+      <script>var url = null
+const editor = ace.edit('editor')
+document.getElementById('editor').style.fontSize='16px';
+editor.setTheme("ace/theme/monokai")
+
+editor.session.setMode("ace/mode/html");
+ 
+editor.setShowPrintMargin(false);
+editor.renderer.setShowGutter(true);
+editor.session.setUseWorker(false)
+function createUrl(html) {
+  var blob = new Blob([html], { type: 'text/html' })
+  return URL.createObjectURL(blob)
+}
+
+
+function removeUrl(url) {
+  URL.revokeObjectURL(url)
+}
+function getIframe() {
+  var iframe = document.getElementById('iframe')
+  return iframe
+}
+
+function setIframeUrl(url) {
+  var iframe = getIframe()
+  iframe.src = url
+}
+
+function getEditorCode() {
+  return editor.getValue()
+}
+
+function buttonclick() {
+  var code = getEditorCode()
+  removeUrl(url)
+  url = createUrl(code)
+  setIframeUrl(url)
+  
+}
+// Get the modal
+function buttonclick68() {
+  var code = getEditorCode()
+  removeUrl(url)
+  url = createUrl(code)
+  window.open(url);
+  
+}
+function download_txt() {
+  var save = prompt("Save file as", "Waffle");
+  var textToSave = getEditorCode() ;
+  var hiddenElement = document.createElement('a');
+  hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+  hiddenElement.target = '_blank';
+  hiddenElement.download = save + ".wafer";
+  hiddenElement.click();
+}
+
+document.getElementById('save').addEventListener('click', download_txt);
+
+
+function readFile(input) {
+  let file = input.files[0];
+
+  let reader = new FileReader();
+
+  reader.readAsText(file);
+
+  reader.onload = function() {
+    console.log(reader.result);
+  };
+
+  reader.onerror = function() {
+    console.log(reader.error);
+  };
+
+}
+function seiko(){
+  var find = document.getElementById("search").value;
+  var replace = document.getElementById("replace").value;
+  if(editor.find(find)){
+editor.replace(replace);
+  }
+  else{
+    alert('no such keyword in your file  as : ' + find);
+  }
+  
+}
+function launchpreference(){
+document.getElementById('frame3').style.display="block";
+}
+function launchsearch(){
+document.getElementById('frame2').style.display="block";
+document.getElementById('searchbox').style.display="block";
+}
+function launchconsole(){
+document.getElementById('consolediv')
+.style.display="block";
+}
+function closeframe2(){
+document.getElementById('frame2').style.display="none"; }
+function closeframe3(){
+document.getElementById('frame3').style.display="none"; }
+function closeconsole(){
+document.getElementById('consolediv')
+.style.display="none";  
+}
+if (typeof console  != "undefined") 
+    if (typeof console.log != 'undefined')
+        console.olog = console.log;
+    else
+        console.olog = function() {};
+
+console.log = function(message) {
+    console.olog(message);
+   document.getElementById('console').innerHTML += ('<p>' + message + '</p>');
+};
+console.error = console.debug = console.info =  console.log;
+
+function blocks(){
+  document.getElementById('editor').style.display="none";
+  document.getElementById('blocks').style.display="block";
+}
+function blocklyclose(){
+  document.getElementById('editor').style.display="block";
+  document.getElementById('blocks').style.display="none"; 
+}</script>
+  </body>
+</html>
