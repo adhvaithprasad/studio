@@ -371,7 +371,7 @@ onclick="launchsearch()"></i><br>
   </div> 
   <div id="searchbox">
   <input id="search" placeholder="search"/>
- <i class="fas fa-search" style="padding-top:4px;color:rgb(67, 193, 243);margin-left:20px;"></i>
+ <i class="fas fa-search" style="padding-top:4px;color:rgb(67, 193, 243);margin-left:20px;" onclick="find1()"></i>
   <i class="fas fa-chevron-up" style="margin-left:20px;color:rgb(67, 193, 243);"></i>
   <i class="fas fa-chevron-down" style="margin-left:20px;color:rgb(67, 193, 243);"></i>
   <br><br>
@@ -525,6 +525,10 @@ editor.replace(replace);
   }
   
 }
+function find1(){
+var find = document.getElementById("search").value;
+editor.find(find);	
+}	
 function launchpreference(){
 document.getElementById('frame3').style.display="block";
 }
