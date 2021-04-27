@@ -377,7 +377,7 @@ onclick="launchsearch()"></i><br>
   <br><br>
   <input id="replace" placeholder="replace"/>
   <i class="fas fa-sync" style="margin-left:20px;color:rgb(67, 193, 243);" onclick="seiko()"></i>
-  <i class="fas fa-sync" style="margin-left:20px;color:rgb(67, 193, 243);"> all</i>
+  <i class="fas fa-sync" style="margin-left:20px;color:rgb(67, 193, 243);" onclick="replaceall()"> all</i>
   
   </div>
   <div id="preferencebox">
@@ -514,9 +514,9 @@ function readFile(input) {
   };
 
 }
+var find = document.getElementById("search").value;
+var replace = document.getElementById("replace").value;
 function seiko(){
-  var find = document.getElementById("search").value;
-  var replace = document.getElementById("replace").value;
   if(editor.find(find)){
 editor.replace(replace);
   }
@@ -526,9 +526,17 @@ editor.replace(replace);
   
 }
 function find1(){
-var find = document.getElementById("search").value;
 if(editor.find(find)){}
 else{alert('no such keyword in your file  as : ' + find);}
+}	
+function replaceall(){
+editor.replaceAll('find');	
+}	
+function findnext(){
+editor.findNext(find);	
+}
+function findprevious{
+editor.findPrevious(find);	
 }	
 function launchpreference(){
 document.getElementById('frame3').style.display="block";
